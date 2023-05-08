@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	string line;
+	string H = "Hello World";
+	string searching = "2";
+	ifstream read("Data.txt");
+	bool wordFound;
+	read.is_open();
+
+		while (getline(read, line))
+		{
+			if (line.find(searching) != std::string::npos)
+			{
+				cout << "Word found on line" << ':' << line;
+				wordFound = true;
+			}
+		}
+		
+		read.close();
+
+		if (!wordFound)
+		{
+			cout << "Word not found in the document";
+		}
+	system("pause");
+	return 0;
+}
